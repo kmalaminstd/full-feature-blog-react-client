@@ -87,3 +87,21 @@
 
 /* newsletter css */
 
+/* post design css */
+
+.blogPost .card{
+    border: none;
+    cursor: pointer;
+}
+
+.blogPost .card-title{
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.blogPost .card-title:hover{
+    text-decoration: underline;
+}
+
+/* post design css */
+

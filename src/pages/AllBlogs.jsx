@@ -1,8 +1,18 @@
 import React from 'react'
+import BlogPost from '../components/layout/BlogPost'
+import { Container } from 'react-bootstrap'
 
 function AllBlogs() {
   return (
-    <div>AllBlogs</div>
+    <>
+
+      <Container>
+        <BlogPost />
+        <BlogPost />
+        <BlogPost />
+      </Container>
+
+    </>
   )
 }
 
