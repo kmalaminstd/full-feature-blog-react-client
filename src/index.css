@@ -1,0 +1,150 @@
+/* common css */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+:disabled{
+    cursor: no-drop;
+}
+
+/* common css */
+
+
+/* navbar css */
+
+.navActive::after{
+    background-color: orange;
+    content: '';
+    height: 2px;
+    display: block;
+    /* width: 100%; */
+    animation-name: activeBar;
+    animation-duration: 0.8s;
+}
+
+@keyframes activeBar{
+    from{
+        /* transform: translate(-5px);
+        -webkit-transform: translate(-5px);
+        -moz-transform: translate(-5px);
+        -ms-transform: translate(-5px);
+        -o-transform: translate(-5px); */
+        width: 0%;
+    }
+    to{
+        /* transform: translate(0);
+        -webkit-transform: translate(0);
+        -moz-transform: translate(0);
+        -ms-transform: translate(0);
+        -o-transform: translate(0); */
+        width: 100%;
+}
+}
+
+/* navbar css */
+
+/* homebanner css */
+
+.homeBanner{
+    background: linear-gradient(rgba(0, 0, 0, 0.322),rgba(0,0,0,0.5)) , url('image/homebanner.jpg');
+    height: 90vh;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 8%;
+    position: relative;
+}
+
+.homeBanner .wlc{
+    text-align: center;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.homeBanner .wlc h2{
+    color: #fff;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 50px;
+}
+
+.shortTxt{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+}
+
+.shortTxt p{
+    color: #fff;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* homebanner css */
+
+/* sign up form  */
+
+.sign-up-form{
+    width: 650px;
+    margin: 0 auto;
+}
+
+.sign-up-form h3::after{
+    content: '';
+    background-color: orange;
+    height: 2px;
+    width: 50%;
+    display: block;
+    margin: 10px auto;
+}
+
+.sign-up-form .form-fields{
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* sign up form  */
+
+/* footer area css */
+
+.footer .items:nth-child(3) h4{
+    font-weight: bold;
+    font-size: 30px;
+    margin-bottom: 0 !important;
+}
+
+.footer .items:nth-child(3) a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer .items:nth-child(2) a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer .items:nth-child(1) a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer .items:nth-child(1) a:hover{
+    text-decoration: underline blue;
+}
+
+
+
+/* footer area css */

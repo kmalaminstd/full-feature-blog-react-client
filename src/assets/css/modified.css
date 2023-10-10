@@ -1,0 +1,89 @@
+/* topbar css */
+
+
+
+/* topbar css */
+
+/* navbar css */
+
+.navbar-brand{
+    font-weight: 700;
+    font-size: 2rem !important;
+}
+
+.nav-link{
+    font-size: 20px !important;
+}
+
+/* navbar css */
+
+/* topnav bar css */
+
+.list-group-item{
+    background-color: transparent !important;
+    border: none !important;
+}
+
+.list-group-item a{
+    color: #000;
+}
+
+/* topnav bar css */
+
+/* primary post css */
+
+.card-img-overlay{
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.card-img-overlay .card-title{
+    margin-top: 40%;
+    font-weight: bold;
+    font-size: 30px;
+    transition: 0.5s linear;
+    -webkit-transition: 0.5s linear;
+    -moz-transition: 0.5s linear;
+    -ms-transition: 0.5s linear;
+    -o-transition: 0.5s linear;
+}
+
+.primary-card-one:hover{
+    cursor: pointer;
+}
+
+.primary-card-one:hover .card-img-overlay .card-title{
+    margin-top: 30%;
+}
+
+.primary-post-two{
+    cursor: pointer;
+}
+
+.primary-post-two .card-img:hover{
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+}
+
+.primary-post-two .card-img-overlay{
+    color: #fff;
+}
+
+.primary-post-two .card-img-overlay .card-title{
+    margin-top: 0;
+}
+
+/* primary post css */
+
+/* newsletter css */
+
+.newsletter .card-title{
+    font-weight: bold;
+    font-size: 26px;
+    color: orangered;
+}
+
+/* newsletter css */
+
