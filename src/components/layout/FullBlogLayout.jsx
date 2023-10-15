@@ -2,6 +2,7 @@ import React from 'react'
 import { Col, Container, Image, Row } from 'react-bootstrap';
 import {MdDateRange} from 'react-icons/md'
 import {FaUserAlt} from 'react-icons/fa'
+import {AiFillTag} from 'react-icons/ai'
 
 function FullBlogLayout({targetBlog}) {
     console.log(targetBlog);
@@ -17,7 +18,7 @@ function FullBlogLayout({targetBlog}) {
                 </Col>
 
                 <Col>
-                    <p className="d-flex gap-3"> <span className="d-flex align-items-center gap-2"> <FaUserAlt /> {targetBlog.superUser} </span> <span className="d-flex align-items-center gap-2"><MdDateRange /> {targetBlog.createdAt.toDate().toDateString()}</span></p>
+                    <p className="d-flex gap-3"> <span className="d-flex align-items-center gap-2"> <FaUserAlt /> {targetBlog.superUser} </span> <span className="d-flex align-items-center gap-2"><MdDateRange /> {targetBlog.createdAt.toDate().toDateString()}</span> <span className="d-flex align-items-center gap-2"><AiFillTag /> {targetBlog.postCategory}</span></p>
                 </Col>
 
                     <hr />
