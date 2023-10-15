@@ -4,9 +4,12 @@ import App from './App.jsx'
 import './index.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './assets/css/responsive.css'
+import { BlogProvider } from './Context/Blog.context.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
+    <BlogProvider>
+      <App />
+    </BlogProvider>
   </React.StrictMode>,
 )

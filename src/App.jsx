@@ -9,6 +9,7 @@ import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom"
 import NotFound from "./pages/NotFound"
 import { Container } from "react-bootstrap"
 import TopBar from "./components/shared/TopBar"
+import FullBlog from "./pages/FullBlog"
 
 function App() {
 
@@ -53,6 +54,10 @@ function App() {
                 {
                     path: 'user-profile/:id',
                     element: <Profile />
+                },
+                {
+                    path: "blog-post/:postTitle/:id",
+                    element: <FullBlog />
                 }
             ]
         }
