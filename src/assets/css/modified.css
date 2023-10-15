@@ -37,7 +37,7 @@
 }
 
 .card-img-overlay .card-title{
-    margin-top: 40%;
+    margin-top: 50%;
     font-weight: bold;
     font-size: 30px;
     transition: 0.5s linear;
@@ -52,7 +52,7 @@
 }
 
 .primary-card-one:hover .card-img-overlay .card-title{
-    margin-top: 30%;
+    margin-top: 45%;
 }
 
 .primary-post-two{

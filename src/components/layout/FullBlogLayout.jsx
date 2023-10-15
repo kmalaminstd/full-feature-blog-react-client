@@ -5,7 +5,7 @@ import {FaUserAlt} from 'react-icons/fa'
 import {AiFillTag} from 'react-icons/ai'
 
 function FullBlogLayout({targetBlog}) {
-    console.log(targetBlog);
+    // console.log(targetBlog);
   return (
     <>
         <Container className="mt-5">
