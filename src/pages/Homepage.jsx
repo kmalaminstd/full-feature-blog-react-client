@@ -11,7 +11,7 @@ function Homepage() {
     <>
         <HomeBanner />
        
-          <PrimaryPost />
+        <PrimaryPost />
         <RecentArticle />
         <NewsLetter />
     </>
