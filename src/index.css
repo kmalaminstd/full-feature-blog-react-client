@@ -50,7 +50,7 @@
 /* homebanner css */
 
 .homeBanner{
-    background: linear-gradient(rgba(0, 0, 0, 0.322),rgba(0,0,0,0.5)) , url('./image/homebanner.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.322),rgba(0,0,0,0.5)) , url('../public/image/homebanner.jpg');
     height: 90vh;
     width: 100%;
     background-position: center;
