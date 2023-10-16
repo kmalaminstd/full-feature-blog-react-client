@@ -10,8 +10,14 @@ import NotFound from "./pages/NotFound"
 import { Container } from "react-bootstrap"
 import TopBar from "./components/shared/TopBar"
 import FullBlog from "./pages/FullBlog"
+import Join from "./pages/Join"
+import Private from "./routes/Private"
+import Public from "./routes/Public"
+import { useRef } from "react"
 
 function App() {
+
+    const toast = useRef(null)
 
     const DynamicLayout = ()=>{
         return(
@@ -36,12 +42,11 @@ function App() {
                     element: <Homepage />
                 },
                 {
-                    path: 'login',
-                    element: <Login />
-                },
-                {
-                    path: 'sign-up',
-                    element: <Signup />
+                    path: 'continue',
+                    element: 
+                        <Public>
+                            <Join />
+                        </Public>
                 },
                 {
                     path: '*',
@@ -53,7 +58,10 @@ function App() {
                 },
                 {
                     path: 'user-profile/:id',
-                    element: <Profile />
+                    element: 
+                        <Private>
+                            <Profile />
+                        </Private>
                 },
                 {
                     path: "blog-post/:postTitle/:id",
@@ -66,6 +74,7 @@ function App() {
     return(
         <>
             <RouterProvider router={router} />
+
 
         </>
     )

@@ -1,13 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import {Container, Nav, Navbar, Button, NavDropdown, Form} from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import '../../assets/css/modified.css'
 import { useLocation } from 'react-router-dom'
+import { AuthContext } from '../../Context/Auth.context'
 
 
 function NavBar() {
   const [activeData, setActiveData] = useState('home')
   const location = useLocation()
+  const {currentUser, loader} = useContext(AuthContext)
 
 
   useEffect(()=>{
@@ -34,12 +36,18 @@ function NavBar() {
 
               <Nav.Link as={Link} onClick={()=>setActiveData('all-blogs')} className={`${activeData === "all-blogs" ? "navActive" : ''}`} to="/all-blogs">Blogs</Nav.Link>
 
-              <Nav.Link as={Link} onClick={()=>setActiveData('sign-up')} className={`${activeData === "sign-up" ? "navActive" : ''}`}  to="/sign-up">Sign Up</Nav.Link>
+              {
+                !currentUser && loader &&
 
-              <Nav.Link as={Link} onClick={()=>setActiveData('login')} className={`${activeData === "login" ? "navActive" : ''}`} to="/login">Login</Nav.Link>
+                <Nav.Link as={Link} onClick={()=>setActiveData('continue')} className={`${activeData === "continue" ? "navActive" : ''}`} to="/continue">Login/Register</Nav.Link>
+              }
 
+              {
+                currentUser && loader && (
 
-              <Nav.Link as={Link} onClick={()=>setActiveData('user-profile')} className={`${activeData === "user-profile" ? "navActive" : ''}`} to={`user-profile/${2}`}>Profile</Nav.Link>
+                  <Nav.Link as={Link} onClick={()=>setActiveData('user-profile')} className={`${activeData === "user-profile" ? "navActive" : ''}`} to={`user-profile/${currentUser.uid}`}>Profile</Nav.Link>
+                )
+              }
               {/* <NavDropdown title="Link" id="navbarScrollingDropdown">
                 <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
                 <NavDropdown.Item href="#action4">

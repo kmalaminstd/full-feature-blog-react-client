@@ -105,3 +105,34 @@
 
 /* post design css */
 
+/* continue page css */
+
+.g-card{
+    color: #fff !important;
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.g-card:nth-child(1){
+    background-color: #db3236 !important;
+}
+
+.g-card:nth-child(2){
+    background-color: #171515 !important;
+}
+
+/* continue page css */
+
+/* user profile css */
+
+.user-profile .card{
+    background: none !important;
+}
+
+.user-profile .card img{
+    object-fit: cover;
+}
+
+/* user profile css */
+
