@@ -1,11 +1,16 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Col, Container, Image, Row } from 'react-bootstrap';
 import {MdDateRange} from 'react-icons/md'
 import {FaUserAlt} from 'react-icons/fa'
 import {AiFillTag} from 'react-icons/ai'
+import CommentBox from './CommentBox';
+import ShowComment from './ShowComment';
 
 function FullBlogLayout({targetBlog}) {
-    // console.log(targetBlog);
+    // console.log(targetBlog.id);
+
+    
+
   return (
     <>
         <Container className="mt-5">
@@ -31,6 +36,16 @@ function FullBlogLayout({targetBlog}) {
                     <div dangerouslySetInnerHTML={{__html: targetBlog.content}}>
 
                     </div>
+                </Col>
+
+                <Col lg={12} md={12} className="mt-3">
+                    <CommentBox id={targetBlog.id} />
+                </Col>
+
+                <Col lg={12} md={12}>
+                    
+                    <ShowComment targetBlog={targetBlog} />
+                    
                 </Col>
             </Row>
         </Container>

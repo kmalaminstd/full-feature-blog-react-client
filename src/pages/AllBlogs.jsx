@@ -7,7 +7,7 @@ import { ClockLoader } from 'react-spinners'
 function AllBlogs() {
 
   const {blogs} = useContext(BlogContext)
-  console.log(blogs);
+  // console.log(blogs);
 
   return (
     <>

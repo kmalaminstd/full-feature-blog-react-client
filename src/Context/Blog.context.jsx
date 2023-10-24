@@ -7,6 +7,9 @@ export const BlogContext = createContext()
 export const BlogProvider = ({children})=>{
 
     const [blogs, setBlogs] = useState(null)
+    const [detectChange, setDetectChange] = useState(false)
+
+
     useEffect(()=>{
         return onSnapshot(postColRef, snapshot=>{
             const blog = snapshot.docs.map( elm => {
@@ -17,7 +20,9 @@ export const BlogProvider = ({children})=>{
             })
             setBlogs(blog)
         })
-    },[])
+    },[detectChange])
+
+   
 
    
 
@@ -25,7 +30,7 @@ export const BlogProvider = ({children})=>{
 
     const value = {
         blogs,
-       
+        setDetectChange
     }
 
     return(

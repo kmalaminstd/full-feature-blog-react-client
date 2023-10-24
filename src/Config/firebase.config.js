@@ -23,5 +23,7 @@ const app = initializeApp(firebaseConfig);
 // const analytics = getAnalytics(app);
 export const db = getFirestore(app)
 export const postColRef = collection(db,'blog')
+export const commentRef = collection(db,'blog')
+// console.log(commentRef);
 export const newsLetterColRef = collection(db, 'newsLetterEmail')
 export const auth = getAuth(app)
