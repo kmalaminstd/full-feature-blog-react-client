@@ -4,12 +4,17 @@ import { Link } from 'react-router-dom'
 import '../../assets/css/modified.css'
 import { useLocation } from 'react-router-dom'
 import { AuthContext } from '../../Context/Auth.context'
+import { db, postColRef } from '../../Config/firebase.config'
+import { BlogContext } from '../../Context/Blog.context'
+import { Firestore, QuerySnapshot, collection } from 'firebase/firestore'
 
 
 function NavBar() {
+  const {blogs} = useContext(BlogContext)
   const [activeData, setActiveData] = useState('home')
   const location = useLocation()
   const {currentUser, loader} = useContext(AuthContext)
+  const [searchText, setSearchText] = useState('')
 
 
   useEffect(()=>{
@@ -18,6 +23,29 @@ function NavBar() {
 
     // console.log(Window.sc);
   },[])
+
+  const hanldeSearchSubmit = e =>{
+    e.preventDefault()
+    if(blogs){
+      blogs.map(item => {
+        console.log(item.postTitle === searchText);
+      })
+    }
+  }
+
+  const searchInfo = e => {
+    setSearchText(e.target.value)
+  }
+
+  useEffect(()=>{
+    postColRef.get().then((querySnapshot)=>{
+      querySnapshot.forEach(doc=>{
+        console.log(doc);
+      })
+    })
+  },[searchText])
+
+
 
   return (
     <>
@@ -62,15 +90,16 @@ function NavBar() {
                 Link
               </Nav.Link> */}
             </Nav>
-            <Form className="d-flex">
+            <Form className="d-flex" onSubmit={hanldeSearchSubmit}>
               <Form.Control
                 type="search"
-                placeholder="Search"
+                placeholder="Search blog by title"
                 className="me-2"
                 aria-label="Search"
-                disabled
+                value={searchText}
+                onChange={e=>setSearchText(e.target.value)}
               />
-              <Button variant="outline-success" disabled={true}>Search</Button>
+              <Button variant="outline-success" disabled={false}>Search</Button>
             </Form>
           </Navbar.Collapse>
         </Container>

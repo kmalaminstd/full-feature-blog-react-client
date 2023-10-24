@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 function PrimaryPost() {
 
     const {blogs} = useContext(BlogContext)
-    console.log(blogs);
+    // console.log(blogs);
     const navigate = useNavigate()
 
     const getFullBlog = (blog)=>{

@@ -1,0 +1,1 @@
+const algoliasearch = require('algoliasearch');

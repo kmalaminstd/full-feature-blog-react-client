@@ -1,7 +1,18 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Card, Container, Row, Col, ListGroup, CardText, Button } from 'react-bootstrap'
+import { BlogContext } from '../../Context/Blog.context'
+import { useNavigate } from 'react-router-dom'
 
 function RecentArticle() {
+
+    const {blogs} = useContext(BlogContext)
+    const navigate = useNavigate()
+    // console.log(blogs);
+
+    const getFullPost = ()=>{
+        navigate(`/blog-post/${blogs[0].postTitle}/${blogs[0].id}`)
+    }
+
   return (
     <>
         <div className="recent-article mt-5">
@@ -17,25 +28,31 @@ function RecentArticle() {
                         <Row>
 
                             <Col md={6} sm={12}>
-                                <Card.Img src="image/imgtwo.jpg" />
+                                <Card.Img src={blogs && blogs[0].featureImg} />
                             </Col>
 
                             <Col md={6} sm={12}>
                                 <ListGroup horizontal style={{justifyContent: "space-around"}} className="border-bottom">
-                                    <ListGroup.Item> Admin </ListGroup.Item>
-                                    <ListGroup.Item> 10 Jan, 2020 </ListGroup.Item>
-                                    <ListGroup.Item> Tag: Health </ListGroup.Item>
+                                    <ListGroup.Item> {blogs && blogs[0].superUser} </ListGroup.Item>
+                                    <ListGroup.Item> {blogs && blogs[0].createdAt.toDate().toDateString()} </ListGroup.Item>
+                                    <ListGroup.Item style={{textTransform: "capitalize"}}> Tag: {blogs && blogs[0].postCategory} </ListGroup.Item>
                                 </ListGroup>
 
                                 <Card.Body>
                                     <Card.Title style={{fontSize: "25px"}}>
-                                        <b>My First Blog for this site</b>
+                                        <b>{ blogs && blogs[0].postTitle}</b>
                                     </Card.Title>
-                                    <CardText>
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus necessitatibus suscipit optio fugiat officia sequi nisi quod rerum error provident ea praesentium, nulla ducimus totam quasi obcaecati ipsa laboriosam dolorum quos sapiente dicta animi saepe pariatur ab. Aut aspernatur distinctio sit velit, voluptate nisi quas. Maxime odio deserunt sequi! Enim!
-                                    </CardText>
+                                    <div style={{height: "190px", overflow: "hidden"}}>
+                                        {
+                                            blogs &&
+                                            <div dangerouslySetInnerHTML={{__html: blogs[0].content}}>
+                                            </div>
 
-                                    <Button variant="primary">Read Full Text</Button>
+                                        }
+
+                                    </div>
+
+                                    <Button variant="primary" onClick={getFullPost}>Read Full Text</Button>
                                 </Card.Body>
                             </Col>
 

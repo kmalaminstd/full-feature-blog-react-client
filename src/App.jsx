@@ -13,11 +13,14 @@ import FullBlog from "./pages/FullBlog"
 import Join from "./pages/Join"
 import Private from "./routes/Private"
 import Public from "./routes/Public"
-import { useRef } from "react"
+import { useContext, useRef } from "react"
+import { BlogContext } from "./Context/Blog.context"
+import ToastLayout from "./components/layout/ToastLayout"
+import { Toaster } from "react-hot-toast"
 
 function App() {
 
-    const toast = useRef(null)
+    
 
     const DynamicLayout = ()=>{
         return(
@@ -28,6 +31,8 @@ function App() {
                         <Outlet />
                     </Container>
                 <Footer />
+                
+                
            </>
         )
     }
@@ -72,9 +77,15 @@ function App() {
     ])
 
     return(
-        <>
+        <>  
+            
             <RouterProvider router={router} />
 
+            <Toaster 
+                position="top-left"
+                reverseOrder={false}
+                duration="4000"
+            />
 
         </>
     )
