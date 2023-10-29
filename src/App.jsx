@@ -14,6 +14,7 @@ const Join = lazy(()=> import("./pages/Join"))
 import Private from "./routes/Private"
 import Public from "./routes/Public"
 import { Toaster } from "react-hot-toast"
+const SearchPage = lazy(()=> import('./pages/SearchPage'))
 
 function App() {
 
@@ -68,6 +69,10 @@ function App() {
                 {
                     path: "blog-post/:postTitle/:id",
                     element: <FullBlog />
+                },
+                {
+                    path: "search-page/:text",
+                    element: <SearchPage />
                 }
             ]
         }

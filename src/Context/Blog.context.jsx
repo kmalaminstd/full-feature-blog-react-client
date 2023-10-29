@@ -8,7 +8,8 @@ export const BlogProvider = ({children})=>{
 
     const [blogs, setBlogs] = useState(null)
     const [detectChange, setDetectChange] = useState(false)
-
+    const [searchBlog, setSearchBlog] = useState(null)
+    console.log(searchBlog);
 
     useEffect(()=>{
         return onSnapshot(postColRef, snapshot=>{
@@ -30,7 +31,9 @@ export const BlogProvider = ({children})=>{
 
     const value = {
         blogs,
-        setDetectChange
+        setDetectChange,
+        searchBlog,
+        setSearchBlog
     }
 
     return(

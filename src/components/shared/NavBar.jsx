@@ -1,20 +1,21 @@
 import React, { useContext, useEffect, useState } from 'react'
 import {Container, Nav, Navbar, Button, NavDropdown, Form} from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import '../../assets/css/modified.css'
 import { useLocation } from 'react-router-dom'
 import { AuthContext } from '../../Context/Auth.context'
-import { db, postColRef } from '../../Config/firebase.config'
 import { BlogContext } from '../../Context/Blog.context'
-import { Firestore, QuerySnapshot, collection } from 'firebase/firestore'
 
 
 function NavBar() {
-  const {blogs} = useContext(BlogContext)
+  const {blogs, setSearchBlog} = useContext(BlogContext)
   const [activeData, setActiveData] = useState('home')
   const location = useLocation()
   const {currentUser, loader} = useContext(AuthContext)
   const [searchText, setSearchText] = useState('')
+  const navigate = useNavigate()
+
+  // console.log(blogs);
 
 
   useEffect(()=>{
@@ -24,22 +25,27 @@ function NavBar() {
     // console.log(Window.sc);
   },[])
 
-  const hanldeSearchSubmit = e =>{
+  const handleSubmit = (e)=>{
     e.preventDefault()
-    if(blogs){
-      blogs.map(item => {
-        console.log(item.postTitle === searchText);
-      })
-    }
-  }
-
-  const searchInfo = e => {
-    setSearchText(e.target.value)
-  }
-
-  useEffect(()=>{
     
-  },[searchText])
+      handleSearch()
+    
+    
+  }
+
+  const handleSearch = e =>{
+    
+      const getRes = blogs.find((blog) => blog.postTitle.toLowerCase().includes(searchText))
+      if(getRes){
+        setSearchBlog(getRes)
+        navigate(`/search-page/${searchText}`)
+      }else{
+        setSearchBlog('Nothing found')
+        navigate(`/search-page/${searchText}`)
+      }
+    
+  }
+
 
 
 
@@ -86,22 +92,22 @@ function NavBar() {
                 Link
               </Nav.Link> */}
             </Nav>
-            <Form className="d-flex" onSubmit={hanldeSearchSubmit}>
+            <Form className="d-flex" onSubmit={handleSubmit}>
               <Form.Control
                 type="search"
                 placeholder="Search blog by title"
                 className="me-2"
                 aria-label="Search"
-                value={searchText}
-                onChange={e=>setSearchText(e.target.value)}
+                value={searchText.toLowerCase()}
+                onChange={(e)=>setSearchText(e.target.value)}
               />
-              <Button variant="outline-success" disabled={false}>Search</Button>
+              <Button  variant="outline-success" type="submit">Search</Button>
             </Form>
           </Navbar.Collapse>
         </Container>
       </Navbar>
 
-      
+
     </>
   )
 }

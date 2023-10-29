@@ -1,7 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { useLocation, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { BlogContext } from '../Context/Blog.context'
 import FullBlogLayout from '../components/layout/FullBlogLayout'
+import { ClimbingBoxLoader } from 'react-spinners'
 
 function FullBlog() {
     const [targetBlog, setTargetBlog] = useState(null)
@@ -22,8 +23,9 @@ function FullBlog() {
   return (
     <>  
         {
-            targetBlog && 
-            <FullBlogLayout targetBlog={targetBlog} />
+            targetBlog ?
+            <FullBlogLayout targetBlog={targetBlog} /> :
+            <ClimbingBoxLoader color="#36d7b7" />
         }
     </>
   )
