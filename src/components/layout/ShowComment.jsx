@@ -10,17 +10,13 @@ import { BlogContext } from '../../Context/Blog.context';
 function ShowComment({targetBlog}) {
     const {currentUser,} = useContext(AuthContext)
     const { setDetectChange} = useContext(BlogContext)
-    console.log(targetBlog.comment);
+    // console.log(targetBlog.comment);
 
     const deleteComment = (id)=>{
-        // console.log(targetBlog.id);
         
         const item = targetBlog.comment.filter(itm => 
             itm.commentId === id
         )
-
-        // const removeItem = targetBlog.comment.indexOf(item)
-        // console.log(item);
 
         updateDoc(doc(db, 'blog', targetBlog.id), {
             comment: arrayRemove(item[0])

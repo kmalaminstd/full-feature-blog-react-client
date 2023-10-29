@@ -1,21 +1,18 @@
-import NavBar from "./components/shared/NavBar"
+import { lazy } from "react"
+
+const NavBar = lazy(()=> import("./components/shared/NavBar"))
 import Footer from "./components/shared/Footer"
-import Login from './pages/Login'
-import Signup from './pages/Signup'
-import AllBlogs from "./pages/AllBlogs"
-import Profile from './pages/Profile'
-import Homepage from "./pages/Homepage"
+const AllBlogs = lazy(()=> import("./pages/AllBlogs"))
+const Profile = lazy(()=> import("./pages/Profile"))
+const Homepage = lazy(()=> import("./pages/Homepage"))
 import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom"
-import NotFound from "./pages/NotFound"
+const NotFound = lazy(()=> import("./pages/NotFound"))
 import { Container } from "react-bootstrap"
 import TopBar from "./components/shared/TopBar"
-import FullBlog from "./pages/FullBlog"
-import Join from "./pages/Join"
+const FullBlog = lazy(()=> import("./pages/FullBlog"))
+const Join = lazy(()=> import("./pages/Join"))
 import Private from "./routes/Private"
 import Public from "./routes/Public"
-import { useContext, useRef } from "react"
-import { BlogContext } from "./Context/Blog.context"
-import ToastLayout from "./components/layout/ToastLayout"
 import { Toaster } from "react-hot-toast"
 
 function App() {
