@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { Card, CardGroup, Col, Container, Row } from 'react-bootstrap'
 import { BlogContext } from '../../Context/Blog.context'
 import { useNavigate } from 'react-router-dom';
+import { educationCard, lifehackCard, moreCard, programCard } from '../../assets/images';
 
 function PrimaryPost() {
 
@@ -49,13 +50,13 @@ function PrimaryPost() {
 
                                     <Col md={6} sm={12}>
                                         <Card style={{maxWidth: "100%", height: "200px"}} className="primary-post-two">
-                                            <Card.Img style={{height: "100%", objectFit: "cover"}} src="image/imgtwo.jpg" />
+                                            <Card.Img style={{height: "100%", objectFit: "cover"}} src={educationCard} />
                                             <Card.ImgOverlay>
                                                 <Card.Title>
-                                                    Card Title
+                                                    Education
                                                 </Card.Title>
                                                 <Card.Text>
-                                                    Card Text
+                                                    Get Educational Post or Blog
                                                 </Card.Text>
                                             </Card.ImgOverlay>
                                         </Card>
@@ -64,13 +65,13 @@ function PrimaryPost() {
                                     <Col md={6} sm={12}>
 
                                     <Card style={{maxWidth: "100%", height: "200px"}} className="primary-post-two">
-                                            <Card.Img style={{height: "100%", objectFit: "cover"}} src="image/imgtwo.jpg" />
+                                            <Card.Img style={{height: "100%", objectFit: "cover"}} src={lifehackCard} />
                                             <Card.ImgOverlay>
                                                 <Card.Title>
-                                                    Card Title
+                                                    Life Hacks
                                                 </Card.Title>
                                                 <Card.Text>
-                                                    Card Text
+                                                    Get Life Hack Post or Blog
                                                 </Card.Text>
                                             </Card.ImgOverlay>
                                         </Card>
@@ -86,13 +87,13 @@ function PrimaryPost() {
 
                                     <Col md={6} sm={12}>
                                     <Card style={{maxWidth: "100%", height: "200px"}} className="primary-post-two">
-                                            <Card.Img style={{height: "100%", objectFit: "cover"}} src="image/imgtwo.jpg" />
+                                            <Card.Img style={{height: "100%", objectFit: "cover"}} src={programCard} />
                                             <Card.ImgOverlay>
                                                 <Card.Title>
-                                                    Card Title
+                                                    Programming or Coding
                                                 </Card.Title>
                                                 <Card.Text>
-                                                    Card Text
+                                                    Get Coding solution or programming tips and posts
                                                 </Card.Text>
                                             </Card.ImgOverlay>
                                         </Card>
@@ -100,13 +101,13 @@ function PrimaryPost() {
 
                                     <Col md={6} sm={12}>
                                     <Card style={{maxWidth: "100%", height: "200px"}} className="primary-post-two">
-                                            <Card.Img style={{height: "100%", objectFit: "cover"}} src="image/imgtwo.jpg" />
+                                            <Card.Img style={{height: "100%", objectFit: "cover"}} src={moreCard} />
                                             <Card.ImgOverlay>
                                                 <Card.Title>
-                                                    Card Title
+                                                    More
                                                 </Card.Title>
                                                 <Card.Text>
-                                                    Card Text
+                                                    Get more post like these
                                                 </Card.Text>
                                             </Card.ImgOverlay>
                                         </Card>

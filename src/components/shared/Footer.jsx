@@ -17,20 +17,15 @@ function Footer() {
 
             <ListGroup>
               <ListGroup.Item>
-                <Link>Home</Link>
+                <Link to="/">Home</Link>
               </ListGroup.Item>
               <ListGroup.Item>
-                <Link>Blogs</Link>
+                <Link to="all-blogs">Blogs</Link>
               </ListGroup.Item>
               <ListGroup.Item>
-                <Link>Sign Up</Link>
+                <Link to="continue">Login/Register</Link>
               </ListGroup.Item>
-              <ListGroup.Item>
-                <Link>Login</Link>
-              </ListGroup.Item>
-              <ListGroup.Item>
-                <Link>Profile</Link>
-              </ListGroup.Item>
+              
             </ListGroup>
             
           </div>
@@ -42,10 +37,10 @@ function Footer() {
               <ListGroup.Item>
                 <Link> <BsFacebook /> </Link>
               </ListGroup.Item>
-              <ListGroup.Item>
+              <ListGroup.Item disabled="true">
                 <Link><BsLinkedin /></Link>
               </ListGroup.Item>
-              <ListGroup.Item>
+              <ListGroup.Item disabled="true">
                 <Link> <FaXTwitter /> </Link>
               </ListGroup.Item>
               
@@ -55,7 +50,7 @@ function Footer() {
 
 
           <div className="items">
-            <Link>
+            <Link to="/">
               <h4>K.M.' <sup>s</sup></h4>
               <p>Get your blog</p>
             </Link>
