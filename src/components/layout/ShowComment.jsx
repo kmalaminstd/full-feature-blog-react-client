@@ -35,7 +35,7 @@ function ShowComment({targetBlog}) {
         <>
             <Container fluid>
                 {   
-                    targetBlog.comment  &&
+                    targetBlog?.comment  &&
                     targetBlog.comment.map(elm=>(
 
                         <div key={elm.commentId} style={{
@@ -70,7 +70,7 @@ function ShowComment({targetBlog}) {
                                 <div>
                                     
                                     {
-                                        currentUser.uid === elm.user.userId &&
+                                        currentUser && currentUser.uid === elm.user.userId &&
                                         <>
 
                                             <MdDelete onClick={()=>deleteComment(elm.commentId)} style={{
