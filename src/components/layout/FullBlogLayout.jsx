@@ -12,6 +12,7 @@ function FullBlogLayout({targetBlog}) {
     // console.log(targetBlog.id);
     // const location = useLocation()
     const postLink = window.location.href
+    console.log(postLink);
     
 
   return (
