@@ -56,7 +56,7 @@ function FullBlogLayout({targetBlog}) {
                         <h5 style={{marginRight: "5px"}}>Share this post to :</h5>
                         <FacebookShareButton 
                             
-                            url="https://www.youtube.com/watch?v=rysTbzKOEO0"
+                            url={postLink}
                             
                             className="Demo__some-network__share-button"
                             >
