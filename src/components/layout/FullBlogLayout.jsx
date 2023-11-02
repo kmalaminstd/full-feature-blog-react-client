@@ -9,9 +9,11 @@ import { FacebookIcon, FacebookShareButton } from 'react-share';
 import { useLocation } from 'react-router-dom';
 
 function FullBlogLayout({targetBlog}) {
-    // console.log(targetBlog.id);
-    // const location = useLocation()
     const postLink = window.location.href
+
+    useEffect(()=>{
+        document.title = targetBlog.postTitle
+    },[targetBlog])
     
 
   return (
