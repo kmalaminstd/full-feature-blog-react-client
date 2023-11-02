@@ -19,13 +19,12 @@ function FullBlogLayout({targetBlog}) {
     <>  
 
         <Helmet>
-            <>
+            
                 <meta property="og:title" content={targetBlog.postTitle} />
-                
                 <meta property="og:image" content={targetBlog.featureImg} />
                 <meta property="og:url" content={postLink} />
                 <meta property="og:type" content="website" />
-            </>
+            
         </Helmet>
 
         <Container className="mt-5">
