@@ -55,9 +55,11 @@ function FullBlogLayout({targetBlog}) {
                     <div className="d-flex border p-2">
                         <h5 style={{marginRight: "5px"}}>Share this post to :</h5>
                         <FacebookShareButton 
+                            children={targetBlog.postTitle}
                             url={postLink}
                             quote={targetBlog.postTitle}
                             hashtag={targetBlog.postTitle}
+                            
                             className="Demo__some-network__share-button"
                             >
                             <FacebookIcon size={32} round />
