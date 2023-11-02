@@ -7,17 +7,27 @@ import CommentBox from './CommentBox';
 import ShowComment from './ShowComment';
 import { FacebookIcon, FacebookShareButton } from 'react-share';
 import { useLocation } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 function FullBlogLayout({targetBlog}) {
     const postLink = window.location.href
 
-    useEffect(()=>{
-        document.title = targetBlog.postTitle
-    },[targetBlog])
+   
     
 
   return (
-    <>
+    <>  
+
+        <Helmet>
+            <>
+                <meta property="og:title" content={targetBlog.postTitle} />
+                
+                <meta property="og:image" content={targetBlog.featureImg} />
+                <meta property="og:url" content={postLink} />
+                <meta property="og:type" content="website" />
+            </>
+        </Helmet>
+
         <Container className="mt-5">
             <Row>
 
