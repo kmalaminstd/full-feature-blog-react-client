@@ -8,6 +8,7 @@ import './assets/css/responsive.css'
 import { BlogProvider } from './Context/Blog.context.jsx';
 import { AuthProvider } from './Context/Auth.context.jsx';
 import {GridLoader} from 'react-spinners'
+import { FacebookProvider } from 'react-facebook';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -19,7 +20,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           left: "50%",
           transform: "translate(-50%, -50%)"
         }} color="#36d7b7" />}>
-          <App />
+          <FacebookProvider appId='1276446316385970'>
+            <App />
+          </FacebookProvider>
         </Suspense>
       </BlogProvider>
     </AuthProvider>

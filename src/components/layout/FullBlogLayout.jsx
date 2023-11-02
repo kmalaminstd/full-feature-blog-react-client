@@ -5,7 +5,8 @@ import {FaUserAlt} from 'react-icons/fa'
 import {AiFillTag} from 'react-icons/ai'
 import CommentBox from './CommentBox';
 import ShowComment from './ShowComment';
-import { FacebookIcon, FacebookShareButton } from 'react-share';
+// import { FacebookIcon, FacebookShareButton } from 'react-share';
+import { ShareButton } from 'react-facebook'
 import { useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 
@@ -22,6 +23,7 @@ function FullBlogLayout({targetBlog}) {
             
                 <meta property="og:title" content={targetBlog.postTitle} />
                 <meta property="og:image" content={targetBlog.featureImg} />
+                <meta property="og:description" content={targetBlog.postTitle} />
                 <meta property="og:url" content={postLink} />
                 <meta property="og:type" content="article" />
             
@@ -63,14 +65,17 @@ function FullBlogLayout({targetBlog}) {
 
                     <div className="d-flex border p-2">
                         <h5 style={{marginRight: "5px"}}>Share this post to :</h5>
-                        <FacebookShareButton 
+                        {/* <FacebookShareButton 
                             
                             url={postLink}
                             
                             className="Demo__some-network__share-button"
                             >
                             <FacebookIcon size={32} round />
-                        </FacebookShareButton>
+                        </FacebookShareButton> */}
+                        <ShareButton href={postLink}>
+                            Share to facebook
+                        </ShareButton>
                     </div>
                 </div>
 
