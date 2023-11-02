@@ -12,7 +12,6 @@ function FullBlogLayout({targetBlog}) {
     // console.log(targetBlog.id);
     // const location = useLocation()
     const postLink = window.location.href
-    console.log(postLink);
     
 
   return (
@@ -55,7 +54,7 @@ function FullBlogLayout({targetBlog}) {
                         <h5 style={{marginRight: "5px"}}>Share this post to :</h5>
                         <FacebookShareButton 
                             url={postLink}
-                            quote={postLink}
+                            quote={targetBlog.postTitle}
                             className="Demo__some-network__share-button"
                             >
                             <FacebookIcon size={32} round />
