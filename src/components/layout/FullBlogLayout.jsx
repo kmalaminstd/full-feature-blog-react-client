@@ -20,9 +20,9 @@ function FullBlogLayout({targetBlog}) {
     <>  
 
         <Helmet>
-            
+                
                 <meta property="og:title" content={targetBlog.postTitle} />
-                <meta property="og:image" content={targetBlog.featureImg} />
+                <meta property="og:image" content={targetBlog?.featureImg} />
                 <meta property="og:description" content={targetBlog.postTitle} />
                 <meta property="og:url" content={postLink} />
                 <meta property="og:type" content="article" />
