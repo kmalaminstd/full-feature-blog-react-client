@@ -55,6 +55,7 @@ function FullBlogLayout({targetBlog}) {
                         <FacebookShareButton 
                             url={postLink}
                             quote={targetBlog.postTitle}
+                            hashtag={targetBlog.postTitle}
                             className="Demo__some-network__share-button"
                             >
                             <FacebookIcon size={32} round />
