@@ -5,10 +5,13 @@ import {FaUserAlt} from 'react-icons/fa'
 import {AiFillTag} from 'react-icons/ai'
 import CommentBox from './CommentBox';
 import ShowComment from './ShowComment';
+import { FacebookIcon, FacebookShareButton } from 'react-share';
+import { useLocation } from 'react-router-dom';
 
 function FullBlogLayout({targetBlog}) {
     // console.log(targetBlog.id);
-
+    // const location = useLocation()
+    const postLink = window.location.href
     
 
   return (
@@ -37,6 +40,27 @@ function FullBlogLayout({targetBlog}) {
 
                     </div>
                 </Col>
+
+            
+
+                <div className="d-flex align-items-center justify-content-between px-5">
+
+                
+                    <div>
+                        <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D61553150333761&width=450&layout&action&size&share=false&height=35&appId=285679960556902" width="450" height="35" style={{border:"none" , overflow:"hidden"}} scrolling="no" frameBorder="0" allowFullScreen={true} allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                    </div>
+
+                    <div className="d-flex border p-2">
+                        <h5 style={{marginRight: "5px"}}>Share this post to :</h5>
+                        <FacebookShareButton 
+                            url="https://www.youtube.com/watch?v=-GdpXFmkVdc"
+                            quote={postLink}
+                            className="Demo__some-network__share-button"
+                            >
+                            <FacebookIcon size={32} round />
+                        </FacebookShareButton>
+                    </div>
+                </div>
 
                 <Col lg={12} md={12} className="mt-3">
                     <CommentBox id={targetBlog.id} />
