@@ -13,13 +13,27 @@ import { Helmet } from 'react-helmet';
 function FullBlogLayout({targetBlog}) {
     const postLink = window.location.href
 
+    useEffect(()=>{
+        document.title = targetBlog.postTitle
+        const metaImg = document.querySelector('meta[property="og:image"]')
+        const metaTitle = document.querySelector('meta[property="og:title"]')
+        const metaDescrip = document.querySelector('meta[property="og:description"]')
+        const metaUrl = document.querySelector('meta[property="og:url"]')
+        const metaType = document.querySelector('meta[property="og:type"]')
+        metaImg.setAttribute('content', targetBlog.featureImg)
+        metaTitle.setAttribute('content', targetBlog.postTitle)
+        metaDescrip.setAttribute('content', targetBlog.postTitle)
+        metaUrl.setAttribute('content', postLink)
+        metaType.setAttribute('content', 'article')
+
+    },[])
    
     
 
   return (
     <>  
 
-        <Helmet>
+        {/* <Helmet>
                 
                 <meta property="og:title" content={targetBlog.postTitle} />
                 <meta property="og:image" content={targetBlog?.featureImg} />
@@ -27,7 +41,7 @@ function FullBlogLayout({targetBlog}) {
                 <meta property="og:url" content={postLink} />
                 <meta property="og:type" content="article" />
             
-        </Helmet>
+        </Helmet> */}
 
         <Container className="mt-5">
             <Row>
