@@ -21,7 +21,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           transform: "translate(-50%, -50%)"
         }} color="#36d7b7" />}>
           <FacebookProvider appId='1276446316385970'>
-            <App />
+              <App />
           </FacebookProvider>
         </Suspense>
       </BlogProvider>

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Col, Container, Image, Row } from 'react-bootstrap';
 import {MdDateRange} from 'react-icons/md'
 import {FaUserAlt} from 'react-icons/fa'
@@ -8,40 +8,19 @@ import ShowComment from './ShowComment';
 // import { FacebookIcon, FacebookShareButton } from 'react-share';
 import { ShareButton } from 'react-facebook'
 import { useLocation } from 'react-router-dom';
-import { Helmet } from 'react-helmet';
 
 function FullBlogLayout({targetBlog}) {
     const postLink = window.location.href
 
-    useEffect(()=>{
-        document.title = targetBlog.postTitle
-        const metaImg = document.querySelector('meta[property="og:image"]')
-        const metaTitle = document.querySelector('meta[property="og:title"]')
-        const metaDescrip = document.querySelector('meta[property="og:description"]')
-        const metaUrl = document.querySelector('meta[property="og:url"]')
-        const metaType = document.querySelector('meta[property="og:type"]')
-        metaImg.setAttribute('content', targetBlog.featureImg)
-        metaTitle.setAttribute('content', targetBlog.postTitle)
-        metaDescrip.setAttribute('content', targetBlog.postTitle)
-        metaUrl.setAttribute('content', postLink)
-        metaType.setAttribute('content', 'article')
-
-    },[])
-   
-    
+    const head = document.querySelector('head')
+    const ogTitle = document.createElement('meta')
+    ogTitle.setAttribute('property', "og:title")
+    ogTitle.setAttribute('content', "simple title")
+    head.appendChild(ogTitle)
+    console.log(head);
 
   return (
     <>  
-
-        {/* <Helmet>
-                
-                <meta property="og:title" content={targetBlog.postTitle} />
-                <meta property="og:image" content={targetBlog?.featureImg} />
-                <meta property="og:description" content={targetBlog.postTitle} />
-                <meta property="og:url" content={postLink} />
-                <meta property="og:type" content="article" />
-            
-        </Helmet> */}
 
         <Container className="mt-5">
             <Row>
@@ -87,9 +66,9 @@ function FullBlogLayout({targetBlog}) {
                             >
                             <FacebookIcon size={32} round />
                         </FacebookShareButton> */}
-                        <ShareButton href={postLink}>
+                        {/* <ShareButton href={postLink}>
                             Share to facebook
-                        </ShareButton>
+                        </ShareButton> */}
                     </div>
                 </div>
 
