@@ -44,7 +44,7 @@ function FullBlogLayout({targetBlog}) {
 
                     <hr />
 
-                <Col lg={12} md={12} className="mt-5" style={{maxWidth: "100%"}}>
+                <Col lg={12} md={12} className="mt-5" style={{maxWidth: "1260px"}}>
                     <Image src={targetBlog.featureImg} fluid style={{maxHeight: "400px", objectFit: "cover", width: "100%"}} />
                 </Col>
 
