@@ -5,8 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 function BlogPost({blog}) {
 
-    // console.log(blog);
-    // console.log(blog);
+
     const sliced = blog.content.slice(1, 200)
     const navigate = useNavigate()
 
