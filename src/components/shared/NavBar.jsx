@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import {Container, Nav, Navbar, Button, NavDropdown, Form} from 'react-bootstrap'
+import {Container, Nav, Navbar, Button, Form} from 'react-bootstrap'
 import { Link, useNavigate } from 'react-router-dom'
 import '../../assets/css/modified.css'
 import { useLocation } from 'react-router-dom'
@@ -15,14 +15,11 @@ function NavBar() {
   const [searchText, setSearchText] = useState('')
   const navigate = useNavigate()
 
-  // console.log(blogs);
 
 
   useEffect(()=>{
-    // console.log(location.pathname.split('/')[1]);
     setActiveData(location.pathname.split('/')[1])
 
-    // console.log(Window.sc);
   },[])
 
   const handleSubmit = (e)=>{

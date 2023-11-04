@@ -1,23 +1,15 @@
-import React, { useEffect, useState } from 'react'
+
 import { Col, Container, Image, Row } from 'react-bootstrap';
 import {MdDateRange} from 'react-icons/md'
 import {FaUserAlt} from 'react-icons/fa'
 import {AiFillTag} from 'react-icons/ai'
 import CommentBox from './CommentBox';
 import ShowComment from './ShowComment';
-// import { FacebookIcon, FacebookShareButton } from 'react-share';
-import { ShareButton } from 'react-facebook'
-import { useLocation } from 'react-router-dom';
+import DOMPurify from 'dompurify';
 
 function FullBlogLayout({targetBlog}) {
     const postLink = window.location.href
 
-    const head = document.querySelector('head')
-    const ogTitle = document.createElement('meta')
-    ogTitle.setAttribute('property', "og:title")
-    ogTitle.setAttribute('content', "simple title")
-    head.appendChild(ogTitle)
-    console.log(head);
 
   return (
     <>  
@@ -42,14 +34,17 @@ function FullBlogLayout({targetBlog}) {
                 </Col>
 
                 <Col lg={12} md={12} className="mt-2">
-                    <div dangerouslySetInnerHTML={{__html: targetBlog.content}}>
+                    <div dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(targetBlog.content)}}>
 
                     </div>
+                    
+                    
+
                 </Col>
 
-            
+                    <hr style={{marginTop: "50px"}} />
 
-                <div className="d-flex align-items-center justify-content-between px-1">
+                <div className="d-flex align-items-center justify-content-between px-1 mt-5">
 
                 
                     <div>

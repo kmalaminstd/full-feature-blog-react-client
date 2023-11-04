@@ -9,7 +9,7 @@ export const BlogProvider = ({children})=>{
     const [blogs, setBlogs] = useState(null)
     const [detectChange, setDetectChange] = useState(false)
     const [searchBlog, setSearchBlog] = useState(null)
-    console.log(searchBlog);
+    // console.log(searchBlog);
 
     useEffect(()=>{
         return onSnapshot(postColRef, snapshot=>{

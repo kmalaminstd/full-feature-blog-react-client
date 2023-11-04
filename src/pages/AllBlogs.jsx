@@ -24,9 +24,6 @@ function AllBlogs() {
           </div>
           
         }
-        {/* <BlogPost />
-        <BlogPost />
-        <BlogPost /> */}
       </Container>
 
     </>

@@ -1,3 +1,4 @@
+import DOMPurify from 'dompurify';
 import React from 'react'
 import { Card, Col, Row } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom';
@@ -15,7 +16,7 @@ function BlogPost({blog}) {
   return (
     <>
         <div className="blogPost d-flex justify-content-center mt-3">
-            <Card style={{width: "700px", overflow: "hidden", height: "230px"}} className="p-3" onClick={()=>getFullPost(blog)}>
+            <Card style={{width: "700px"}} className="p-3" onClick={()=>getFullPost(blog)}>
                 <Row>
                     <Col md={4} style={{height: '200px'}}>
                         <Card.Img src={blog.featureImg} style={{height: "100%", objectFit: "cover"}} />
@@ -25,9 +26,14 @@ function BlogPost({blog}) {
                             {blog.postTitle}
                         </Card.Title>
                         <p className="blogInfo"><span>By <b>{blog.superUser}</b></span> <span>at {blog.createdAt.toDate().toDateString()}</span></p>
-                        <Card.Text dangerouslySetInnerHTML={{__html: blog.content}}>
+                        <div style={{
+                            height: "130px",
+                            overflow: "hidden"
+                        }}>
+                            <Card.Text dangerouslySetInnerHTML={{__html: blog.content}}>
+                            </Card.Text>
+                        </div>
                             
-                        </Card.Text>
                     </Col>
                 </Row>
             </Card>
