@@ -40,7 +40,7 @@ function ShowComment({targetBlog}) {
 
                         <div key={elm.commentId} style={{
                             backgroundColor: "rgba(239,239,240,0.1)",
-                            padding: "20px",
+                            padding: "10px",
                             display: "flex",
                             flexDirection: "column",
                             gap: "18px",
@@ -48,7 +48,7 @@ function ShowComment({targetBlog}) {
                         }}>
                             <div className="comment" style={{
                                 backgroundColor: "#fff",
-                                padding: "10px",
+                                padding: "5px",
                                 display: "flex",
                                 gap: "15px",
                                 alignItems: "center", 

@@ -1,10 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Container, ListGroup } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import {BsFacebook , BsLink, BsLinkedin} from 'react-icons/bs'
 import {FaXTwitter} from 'react-icons/fa6'
+import { AuthContext } from '../../Context/Auth.context'
 
 function Footer() {
+
+  const {currentUser} = useContext(AuthContext)
+
   return (
     <div className="footer bg-dark p-2 mt-5 text-white">
       <Container>
@@ -23,7 +27,11 @@ function Footer() {
                 <Link to="all-blogs">Blogs</Link>
               </ListGroup.Item>
               <ListGroup.Item>
-                <Link to="continue">Login/Register</Link>
+                {
+                  !currentUser ?
+                  <Link to="continue">Login/Register</Link> :
+                  <Link to={`user-profile/${currentUser.uid}`}>Profile</Link>
+                }
               </ListGroup.Item>
               
             </ListGroup>

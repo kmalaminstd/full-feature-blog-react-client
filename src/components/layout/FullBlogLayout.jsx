@@ -49,27 +49,14 @@ function FullBlogLayout({targetBlog}) {
 
             
 
-                <div className="d-flex align-items-center justify-content-between px-5">
+                <div className="d-flex align-items-center justify-content-between px-1">
 
                 
                     <div>
                         <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fprofile.php%3Fid%3D61553150333761&width=450&layout&action&size&share=false&height=35&appId=285679960556902" width="450" height="35" style={{border:"none" , overflow:"hidden"}} scrolling="no" frameBorder="0" allowFullScreen={true} allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
                     </div>
 
-                    <div className="d-flex border p-2">
-                        <h5 style={{marginRight: "5px"}}>Share this post to :</h5>
-                        {/* <FacebookShareButton 
-                            
-                            url={postLink}
-                            
-                            className="Demo__some-network__share-button"
-                            >
-                            <FacebookIcon size={32} round />
-                        </FacebookShareButton> */}
-                        {/* <ShareButton href={postLink}>
-                            Share to facebook
-                        </ShareButton> */}
-                    </div>
+                    
                 </div>
 
                 <Col lg={12} md={12} className="mt-3">
