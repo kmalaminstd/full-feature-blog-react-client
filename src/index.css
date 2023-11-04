@@ -153,3 +153,7 @@
 
 
 /* blog post design */
+
+.tagCat:hover{
+    text-decoration: underline;
+}
