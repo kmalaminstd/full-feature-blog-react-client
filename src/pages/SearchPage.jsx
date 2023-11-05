@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { Card, Col, Container, Row } from 'react-bootstrap'
 import { BlogContext } from '../Context/Blog.context'
 import { useNavigate, useParams } from 'react-router-dom'
@@ -7,6 +7,10 @@ import DOMPurify from 'dompurify'
 function SearchPage() {
   const {searchBlog} = useContext(BlogContext)
   const navigate = useNavigate()
+
+  useEffect(()=>{
+    document.title = "KM's Blog || Search page"
+  },[])
 
   const getFullPost = (blog)=>{
     navigate(`/blog-post/${blog.postTitle}/${blog.id}`)

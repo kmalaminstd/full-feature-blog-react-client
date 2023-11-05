@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { Button, Card, Col, Row, } from 'react-bootstrap'
 import { signOut } from 'firebase/auth'
 import { auth } from '../Config/firebase.config'
@@ -10,6 +10,10 @@ function Profile() {
   
   // console.log(currentUser.photoURL);
   // console.log(currentUser);
+
+  useEffect(()=>{
+    document.title = "KM's Blog || User Profile"
+  },[])
 
   const navigate = useNavigate()
 

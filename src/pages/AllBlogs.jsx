@@ -15,6 +15,9 @@ function AllBlogs() {
   }
 
   useEffect(()=>{
+
+    document.title = "KM's Blog || All Blogs"
+
     if(blogs){
       setFilterBlogs(blogs)
       setCategories(blogs.map((blog) => blog.postCategory))

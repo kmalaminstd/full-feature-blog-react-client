@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Card, Col, Row } from 'react-bootstrap'
 import { AiOutlineGoogle, AiFillGithub } from 'react-icons/ai'
 import { GoogleAuthProvider, GithubAuthProvider } from "firebase/auth"
@@ -8,6 +8,10 @@ import { useNavigate } from 'react-router-dom'
 
 
 function Join() {
+
+    useEffect(()=>{
+        document.title = "KM's Blog || Join "
+    },[])
 
     const googleProvider = new GoogleAuthProvider()
     const githubProvider = new GithubAuthProvider()

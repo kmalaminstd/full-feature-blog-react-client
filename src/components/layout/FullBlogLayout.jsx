@@ -6,10 +6,14 @@ import {AiFillTag} from 'react-icons/ai'
 import CommentBox from './CommentBox';
 import ShowComment from './ShowComment';
 import DOMPurify from 'dompurify';
+import { useEffect } from 'react';
 
 function FullBlogLayout({targetBlog}) {
     const postLink = window.location.href
 
+    useEffect(()=>{
+        document.title = `${targetBlog.postTitle}`
+    },[])
 
   return (
     <>  
