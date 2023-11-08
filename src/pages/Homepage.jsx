@@ -5,6 +5,7 @@ const PrimaryPost = lazy(()=> import('../components/layout/PrimaryPost'))
 import NewsLetter from '../components/layout/NewsLetter'
 import RecentArticle from '../components/layout/RecentArticle'
 import { BlogContext } from '../Context/Blog.context'
+const AuthorLayout = lazy(()=> import('../components/layout/AuthorLayout'))
 
 function Homepage() {
   const {blogs} = useContext(BlogContext)
@@ -18,6 +19,8 @@ function Homepage() {
         <PrimaryPost />
         <RecentArticle />
         <NewsLetter />
+        <AuthorLayout />
+
     </>
   )
 }
