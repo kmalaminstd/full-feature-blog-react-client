@@ -1,2 +1,2 @@
 # Live Link
-[Link](kmsite.netlify.app)
+[Link](https://kmblog.netlify.app/)
