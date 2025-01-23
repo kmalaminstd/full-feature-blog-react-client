@@ -3,6 +3,7 @@ import { Card, CardGroup, Col, Container, Row } from 'react-bootstrap'
 import { BlogContext } from '../../Context/Blog.context'
 import { useNavigate } from 'react-router-dom';
 import { educationCard, lifehackCard, moreCard, programCard } from '../../assets/images';
+import { BounceLoader } from 'react-spinners';
 
 function PrimaryPost() {
 
@@ -22,8 +23,8 @@ function PrimaryPost() {
             <Row>
                 <Col lg={6} md={6} sm={12}>
                     {
-                        blogs &&
-                            <Card className="text-white primary-card-one" style={{maxWidth: "100%", height:"400px"}} onClick={()=>getFullBlog(blogs[0])}>
+                        blogs ?
+                            <Card className="text-white primary-card-one" style={{maxWidth: "100%", height:"400px" , position: "relative"}} onClick={()=>getFullBlog(blogs[0])}>
                                 <Card.Img src={blogs[0].featureImg} style={{maxWidth: "100%", height: "100%", objectFit: "cover"}} />
                                 
                                     <Card.ImgOverlay>
@@ -35,7 +36,12 @@ function PrimaryPost() {
                                         </Card.Text>
                                     </Card.ImgOverlay>
                                 
-                            </Card>
+                            </Card> :  <BounceLoader style={{
+                                                position: "absolute",
+                                                top: "50%",
+                                                left: "50%",
+                                                transform: "translate(-50%, -50%)"
+                                                }} color="#36d7b7" />
                     }
 
                 </Col>
